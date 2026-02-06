@@ -39,3 +39,36 @@
 .MMM-Ecobee .stroke-thermostat-color {
   stroke: #D28DE0;
 }
+
+.MMM-Ecobee .sensor-svg{
+  padding-left: 4px /* align icons */
+}
+
+.MMM-Ecobee .icon {
+  /* Aligns the logo and the temperature icon vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MMM-Ecobee .logo{
+  padding-left: 6px;
+  padding-right: 4px;
+  text-align: center;
+}
+
+.MMM-Ecobee td {
+  text-align: left;
+}
+
+.MMM-Ecobee .icon>span {
+  /* Aligns the logo and the temperature icon vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0;
+}
+
+.MMM-Ecobee .logo>span>svg {
+    height: 25px; /* Ensures logo is similar in height to the FA temperature icon */
+}
