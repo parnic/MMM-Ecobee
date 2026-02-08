@@ -47,7 +47,11 @@ See the [Installation](#installation) section above for notes about how authoriz
 | `showSensors` | `true` | If true, will show thermostat(s) as well as remote sensor(s). If false, will only show thermostat(s). |
 | `showHumidity` | `true` | If true, will show current humidity for a thermostat, if available. |
 | `showSetTemperature` | `true` | If true, will show the temperature a thermostat is set to cool/heat to. |
+| `useColoredDots` | `false` | If true, displays colored status indicators (green for ON, red for OFF) instead of text labels. |
+| `dotColorOn` | `'#7cff7c'` | Hex color code for the "ON" status indicator. Only used when `useColoredDots` is true. |
+| `dotColorOff` | `'#f65151'` | Hex color code for the "OFF" status indicator. Only used when `useColoredDots` is true. |
 
 ## Screenshot
 
 ![Screenshot](/sample.png?raw=true)
+![Screenshot](/sample_colored_dots.png?raw=true)
