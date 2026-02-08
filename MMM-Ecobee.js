@@ -10,9 +10,9 @@ Module.register("MMM-Ecobee", {
     showSensors: true,
     showHumidity: true,
     showSetTemperature: true,
-	useColoredDots: false,
-	dotColorOn: '#7cff7c',
-	dotColorOff: '#f65151',
+    useColoredDots: false,
+    dotColorOn: '#7cff7c',
+    dotColorOff: '#f65151',
   },
 
   getStyles() {
@@ -179,24 +179,24 @@ Module.register("MMM-Ecobee", {
 
   getSensorSVG(hasMotion, inUse) {
     var span = document.createElement("span");
-	span.classList.add("sensor-svg");
+    span.classList.add("sensor-svg");
 
-	const motionIndicator = hasMotion
-		? ` M42.699,17.762
+    const motionIndicator = hasMotion
+    	? ` M42.699,17.762
 			c-0.385,0-0.698-0.324-0.698-0.722c0-5.957-4.792-10.802-10.684-10.802c-0.386,0-0.702-0.324-0.702-0.722
 			c0-0.398,0.316-0.722,0.702-0.722c6.664,0,12.084,5.493,12.084,12.246C43.401,17.439,43.085,17.762,42.699,17.762z M47.294,9.417
 			c-0.386,0-0.701-0.324-0.701-0.722c0-3.998-3.217-7.25-7.174-7.25c-0.386,0-0.699-0.324-0.699-0.722C38.72,0.324,39.033,0,39.418,0
 			c4.727,0,8.574,3.9,8.574,8.695C47.992,9.093,47.679,9.417,47.294,9.417z`
-		: "";
+    	: "";
 
-	let statusIndicator = "";
-	if (typeof inUse === "boolean") {
-		statusIndicator = this.config.useColoredDots
-		? `<circle cx="20" cy="28.5" r="4" fill="${inUse ? this.config.dotColorOn : this.config.dotColorOff}"/>`
-		: `<text x="0.2em" y="1.85em" textLength="1.8rem" lengthAdjust="spacingAndGlyphs">${inUse ? "ON" : "OFF"}</text>`;
-	}
+    let statusIndicator = "";
+    if (typeof inUse === "boolean") {
+    	statusIndicator = this.config.useColoredDots
+    	? `<circle cx="20" cy="28.5" r="4" fill="${inUse ? this.config.dotColorOn : this.config.dotColorOff}"/>`
+    	: `<text x="0.2em" y="1.85em" textLength="1.8rem" lengthAdjust="spacingAndGlyphs">${inUse ? "ON" : "OFF"}</text>`;
+    }
 
-	var contents = `<svg version="1.1" id="sensor-motion" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    var contents = `<svg version="1.1" id="sensor-motion" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 		x="0px" y="0px" viewBox="0 0 48 57" xml:space="preserve">
 		<path d="M3.803,57.005c-0.385,0-0.698-0.324-0.698-0.722c0-0.398,0.313-0.722,0.698-0.722h14.038v-6.869h-5.756
 			C5.42,48.691,0,43.198,0,36.445V23.08c0-6.753,5.42-12.247,12.084-12.247H25.29c6.664,0,12.084,5.494,12.084,12.247v13.365
@@ -205,8 +205,8 @@ Module.register("MMM-Ecobee", {
 			c5.893,0,10.684-4.846,10.684-10.802V23.08c0-5.957-4.791-10.802-10.684-10.802H12.084z${motionIndicator}" />
 		${statusIndicator}
 	</svg>`;
-	span.innerHTML = contents;
-	return span;
+    span.innerHTML = contents;
+    return span;
   },
 
   getColdSVG() {
@@ -326,11 +326,11 @@ Module.register("MMM-Ecobee", {
   getThermostatSVG(inUse) {
     var span = document.createElement("span");
 
-	const statusIndicator = this.config.useColoredDots
-		? `<circle cx="28.5" cy="28.5" r="5" fill="${inUse ? this.config.dotColorOn : this.config.dotColorOff}"/>`
-		: `<text x="0.25em" y="1.85em" textLength="1.8rem" lengthAdjust="spacingAndGlyphs">${inUse ? "ON" : "OFF"}</text>`;
+    const statusIndicator = this.config.useColoredDots
+    	? `<circle cx="28.5" cy="28.5" r="5" fill="${inUse ? this.config.dotColorOn : this.config.dotColorOff}"/>`
+    	: `<text x="0.25em" y="1.85em" textLength="1.8rem" lengthAdjust="spacingAndGlyphs">${inUse ? "ON" : "OFF"}</text>`;
 
-	span.innerHTML = `<svg version="1.1" id="ecobee" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    span.innerHTML = `<svg version="1.1" id="ecobee" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 		y="0px" viewBox="0 0 57 57" style="height: 35px" xml:space="preserve">
 		<g>
 			<g>
@@ -349,7 +349,7 @@ Module.register("MMM-Ecobee", {
 		</g>
 		${statusIndicator}
 	</svg>`;
-	return span;
+    return span;
   },
 
   getAutoSVG() {
